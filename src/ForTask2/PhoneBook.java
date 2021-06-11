@@ -25,4 +25,10 @@ public class PhoneBook {
             if (findingSurname.equals(e.getSurname())) System.out.println(e.getSurname()+" " + e.getPhoneNumber());
         }
     }
+
+    @Override
+    public String toString() {
+        sort();
+        return entries.toString();
+    }
 }

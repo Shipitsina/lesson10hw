@@ -13,12 +13,13 @@ public class Main {
 
 
     static void doTask1() {
+        System.out.println("Task1");
 
         // Создаем массив слов
 
         List<String> wordsArrayList = Arrays.asList("кошка","одеялко","роботы","ницше",
                 "мороженка","одеялко","ницше","ницше",
-                "кошка","это","все","какие-то","слова");;
+                "кошка","это","все","какие-то","слова");
 
         // Выводим список уникальных слов
 
@@ -42,9 +43,10 @@ public class Main {
 
 
     private static void doTask2() {
+        System.out.println("Task2");
         PhoneBook phoneBook = new PhoneBook();
-        phoneBook.add(new Entry("mihailova",8210));
+        phoneBook.add(new Entry("mihailova", 8210));
+        System.out.println(phoneBook);
         phoneBook.get("ivanov");
-        phoneBook.get("mihailova");
     }
 }

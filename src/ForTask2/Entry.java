@@ -29,4 +29,12 @@ public class Entry implements Comparable <Entry>{
     public int compareTo(Entry o) {
         return this.surname.compareTo(o.surname);
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                 surname + "-" +
+                 phoneNumber +
+                "}";
+    }
 }

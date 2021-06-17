@@ -1,4 +1,3 @@
-import ForTask2.Entry;
 import ForTask2.PhoneBook;
 
 import java.util.*;
@@ -24,7 +23,7 @@ public class Main {
         // Выводим список уникальных слов
 
         Set setWords = new HashSet();
-        setWords.addAll(wordsArrayList);
+        setWords. addAll(wordsArrayList);
         System.out.println(setWords);
 
         //Считаем, сколько раз встречается каждое слово.
@@ -44,9 +43,15 @@ public class Main {
 
     private static void doTask2() {
         System.out.println("Task2");
+
         PhoneBook phoneBook = new PhoneBook();
-        phoneBook.add(new Entry("mihailova", 8210));
         System.out.println(phoneBook);
-        phoneBook.get("ivanov");
+        phoneBook.add("ivanov", 4521);
+        phoneBook.add("petrov", 6830);
+        phoneBook.add("mihailova", 8210);
+        phoneBook.add("mihailova", 8210);
+        phoneBook.add("ivanov", 4520);
+        System.out.println(phoneBook);
+        System.out.println(phoneBook.get("ivanov"));
     }
 }

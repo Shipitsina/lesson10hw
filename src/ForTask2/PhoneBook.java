@@ -1,34 +1,29 @@
 package ForTask2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class PhoneBook {
-    static private List <Entry> entries = new ArrayList<>(Arrays.asList(new Entry("ivanov", 4520),
-            new Entry("petrov",6830), new Entry("ivanov",9001)
-    ));
+    private final HashMap <String, ArrayList<Integer>> entries = new HashMap<>();
 
-
-    public void add (Entry newEntry) {
-        entries.add(newEntry);
+    public List<Integer> get(String findingSurname){
+        return entries.get(findingSurname);
     }
 
-    public static void sort(){
-        Collections.sort(entries);
+    public void add (String name, int phoneNumber) {
+        if (entries.get(name) != null){
+            if (entries.get(name).contains(phoneNumber)) {
+                System.out.println("This entry already exist!");
+            } else
+                entries.get(name).add(phoneNumber);
+        } else {
+            entries.put(name, new ArrayList<>() {{add(phoneNumber);}});}
     }
 
-    public void get(String findingSurname){
-        for (Entry e:
-             entries) {
-            if (findingSurname.equals(e.getSurname())) System.out.println(e.getSurname()+" " + e.getPhoneNumber());
-        }
-    }
 
     @Override
     public String toString() {
-        sort();
-        return entries.toString();
+        String s = "PhoneBook" +
+                entries;
+        return s;
     }
 }
